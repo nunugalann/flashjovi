@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlashJovi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <section id="container"> 
+            <div class="cartao">
+                <div class="cartao__inner">
+                    <div class="cartao__frente">
+                        <h3 class="destaque">FORMAÇÃO</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            BANDA
+                        </div>
+                    </div>
+                    <div class="cartao__verso">
+                        <div class="cartao__conteudo__resposta">
+                            Bon Jovi é uma banda americana de rock, formada em 1983, em Sayreville, Nova Jersey. A formação atual da banda consiste no cantor Jon Bon Jovi, no tecladista David Bryan, no baterista Tico Torres, no guitarrista Phil X e no baixista Hugh McDonald.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cartao">
+                <div class="cartao__inner">
+                    <div class="cartao__frente">
+                        <h3 class="destaque">VOCALISTA</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            JON BON JOVI
+                        </div>
+                    </div>
+                    <div class="cartao__verso">
+                        <div class="cartao__conteudo__resposta">
+                            John Francis Bongiovi Jr., mais conhecido como Jon Bon Jovi ou simplesmente Bon Jovi, é um músico dos Estados Unidos, considerado por críticos como um dos maiores ícones do rock mundial da década de 1980.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cartao">
+                <div class="cartao__inner">
+                    <div class="cartao__frente">
+                        <h3 class="destaque">ÁLBUNS</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            FOREVER
+                        </div>
+                    </div>
+                    <div class="cartao__verso">
+                        <div class="cartao__conteudo__resposta">
+                            Forever é o décimo sexto álbum de estúdio da banda de rock americana Bon Jovi, lançado em 7 de junho de 2024 pela Island Records. Foi precedido pelos singles "Legendary" e "Living Proof".
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="cartao">
+                <div class="cartao__inner">
+                    <div class="cartao__frente">
+                        <h3 class="destaque">CURIOSIDADE</h3>
+                        <div class="cartao__conteudo__pergunta">
+                            FUNDAÇÃO
+                        </div>
+                    </div>
+                    <div class="cartao__verso">
+                        <div class="cartao__conteudo__resposta">
+                            Jon tem uma fundação chamada Bon Jovi Soul Foundation, que visa dar assistência a famílias economicamente desfavoráveis. A instituição é responsável por diversas ações criativas – como o próprio JBJ Soul Kitchen – e beneficientes. Além do restaurante, a fundação também coordena o projeto Joseph’s House of Candem, que dá abrigo e assistência a mendigos e moradores de rua. 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>Conheça a história de um dos maiores astros do rock dos anos 80!</p>
+    </footer>
+
+    <script>
+        // Seleciona todos os cartões
+        document.querySelectorAll('.cartao').forEach(cartao => {
+            cartao.addEventListener('click', () => {
+                const inner = cartao.querySelector('.cartao__inner');
+                inner.classList.toggle('rotacionar');
+            });
+        });
+
+        // Cursor com corações
+        document.addEventListener('mousemove', (e) => {
+            const cursor = document.querySelector('.cursor');
+            cursor.style.left = `${e.pageX}px`;
+            cursor.style.top = `${e.pageY}px`;
+
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = `${e.pageX}px`;
+            heart.style.top = `${e.pageY}px`;
+            document.body.appendChild(heart);
+
+            setTimeout(() => heart.remove(), 1000);
+        });
+    </script>
+
+    <!-- Adiciona o elemento do cursor -->
+    <div class="cursor"></div>
+</body>
+</html>
